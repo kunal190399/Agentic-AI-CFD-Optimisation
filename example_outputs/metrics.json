@@ -1,0 +1,46 @@
+{
+  "project": "Agentic AI for automated gas-flow modelling and optimisation: proof of concept",
+  "model": "2D steady pressure-driven Darcy/lubrication-type approximation; NOT validated Navier-Stokes/plasma CFD",
+  "seed": 42,
+  "grid": [
+    60,
+    36
+  ],
+  "total_evaluations": 23,
+  "successful_evaluations": 23,
+  "runtime_seconds": 1.798,
+  "uniformity_cv_reduction_percent": 78.09,
+  "objective_reduction_percent": 87.26,
+  "baseline": {
+    "inlet_center": 0.3,
+    "inlet_width": 0.16,
+    "gap_center": 0.62,
+    "gap_width": 0.24,
+    "objective": 0.5912247721286097,
+    "uniformity_cv": 0.33837484669486756,
+    "inlet_flux": 0.44455943558523336,
+    "outlet_flux": 0.44455943558508454,
+    "mass_balance_relative_error": 3.347705268139981e-13,
+    "grid": "60x36",
+    "model": "steady 2D pressure-driven Darcy/lubrication approximation"
+  },
+  "best": {
+    "inlet_center": 0.4436952311571625,
+    "inlet_width": 0.15382519501081166,
+    "gap_center": 0.4980930403289631,
+    "gap_width": 0.7,
+    "objective": 0.0753460960375776,
+    "uniformity_cv": 0.07414455402143526,
+    "inlet_flux": 0.6490237471120264,
+    "outlet_flux": 0.6490237471118844,
+    "mass_balance_relative_error": 2.1878633175042773e-13,
+    "grid": "60x36",
+    "model": "steady 2D pressure-driven Darcy/lubrication approximation"
+  },
+  "objective_definition": "CV of superficial axial flux in y=[0.12,0.88] at x~=0.67 + 0.8*max(0,(0.65-outlet_flux)/0.65)",
+  "caveats": [
+    "normalised geometry and pressure; no gas chemistry, plasma kinetics, temperature, or Navier-Stokes inertia",
+    "results are proof-of-concept metrics only, not validated semiconductor process predictions",
+    "AI component is a local feedback-driven Random Forest surrogate planner; no LLM API is needed"
+  ]
+}
